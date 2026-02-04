@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style></style>
+</head>
+<body>
+  <input type="text" id="word" placeholder="Type">
+    <input type="text" id="letters" placeholder="Type">
+    <button onclick="check(Number(document.getElementById('word').value), Number(document.getElementById('letters').value))">Run</button>
+    <p style="font-size: 46px; font-weight: bold; color: blue; text-align: center; text-shadow: black 2px 2px; font-family: Arial, sans-serif; letter-spacing: 2px; padding: 10px; border: 2px solid black; background-color: lightgray; border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 10px; margin: 20px auto; width: fit-content; max-width: 80%; line-height: 1.5; overflow-wrap: break-word; word-spacing: 4px; text-transform: uppercase; white-space: pre-wrap;">                        </p>
+    </p>
+<script>
+  //storage to store the values A and B
+  let storage = [];
+  // all styles to make it look cool
+document.querySelector('p').style.fontSize = "46px";
+    document.querySelector('p').style.fontWeight = "bold";
+    document.querySelector('p').style.color = "blue";
+    document.querySelector('p').style.textAlign = "center";
+    document.querySelector('p').style.textShadow = "2px 2px black";
+    document.querySelector('p').style.fontFamily = "Arial, sans-serif";
+    document.querySelector('p').style.letterSpacing = "2px";
+    document.querySelector('p').style.padding = "10px";
+    document.querySelector('p').style.border = "2px solid black";
+    document.querySelector('p').style.backgroundColor = "lightgray";
+    document.querySelector('p').style.borderRadius = "10px";
+    document.querySelector('p').style.boxShadow = "4px 4px 10px rgba(0, 0, 0, 0.1)";
+    document.querySelector('p').style.margin = "20px auto";
+    document.querySelector('p').style.width = "fit-content";
+    document.querySelector('p').style.maxWidth = "80%";
+    document.querySelector('p').style.lineHeight = "1.5";
+    document.querySelector('p').style.overflowWrap = "break-word";
+    document.querySelector('p').style.wordSpacing = "4px";
+    document.querySelector('p').style.textTransform = "uppercase";
+    document.querySelector('p').style.whiteSpace = "pre-wrap";
+    //function to process units to LCM values
+  function check(a, b){
+      storage.push(Number(document.getElementById('word').value));
+      //storage includes values
+  storage.push(Number(document.getElementById('letters').value));
+//check if user input is viable for processing
+  if (Math.round(storage[0]) !== storage[0] || Math.round(storage[1]) !== storage[1]){
+      document.querySelector('p').innerText = "Please enter whole numbers only.";
+          storage.splice(0, storage.length);
+      return;
+    }
+    else if(isNaN( storage[0]) === true || isNaN(storage[1]) === true){
+      document.querySelector('p').innerText = "Please enter valid numbers";
+          storage.splice(0, storage.length);
+      return;
+    }
+else if (storage[0] <= 0 || storage[1] <= 0){
+      document.querySelector('p').innerText = "Please enter numbers greater than zero.";
+          storage.splice(0, storage.length);
+      return;
+}
+else{
+  //if a > b then storage value[0] (aka value A) and vice versa
+    while(a !== b){
+      if(a < b){
+        a += storage[0];
+        console.log(a);
+      }
+    else if(b < a){
+        b += storage[1];
+        console.log(b);
+    }
+     
+    }
+    //remove A  and  B values from storage
+    storage.splice(0, storage.length);
+    // show the LCM value
+    document.querySelector('p').innerText = `LCM is ${a}.`;
+      return; 
+  }
+  }
+  //visual effect (once user processes values it not shown again)
+let show = false;
+
+setInterval(() => {
+  if(
+ document.querySelector('p')?.innerText[document.querySelector('p')?.innerText.length - 1] === '.'
+    )
+  {
+    return;
+  }
+else{
+  document.querySelector('p').innerText = show ? '<_o_u_t_p_u_t_>' : '                        ';
+  show = !show;
+}
+
+}, 1250);
+
+  </script>
+</body>
+</html>
