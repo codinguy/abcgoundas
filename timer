@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Coin Flip</title>
+</head>
+<style>
+  div{
+   color: rgb(60, 97, 129);
+text-shadow: 0.5px 0.5px;
+text-align: center;
+text-spacing-trim:space-all;
+font-family:cursive;
+font-size: 66px;
+  }
+</style>
+<body>
+
+  <button onclick="startClock()">Try it</button>
+
+  <div id="u_dum_n_stupid"></div>
+
+<script>
+  var i = 0;
+function startClock() {
+  let a = {
+  
+    second: 0,
+    minute: 0,
+    hour: 0
+  };
+
+  setInterval(() => {
+    a.second++;
+    if (a.second === 60) {
+      a.second = 0;
+      a.minute++;
+    }
+if (a.minute === 60) {
+      a.minute = 0;
+      a.hour++; 
+    }
+    // show time on screen
+    document.getElementById("u_dum_n_stupid").textContent =
+      `${a.second} : ${a.minute} : ${a.hour}`;
+  }, 1000);
+document.body.innerHTML = `<div id="u_dum_n_stupid">${a}</div>`;
+}
+
+</script>
+</body>
+</html>
+
