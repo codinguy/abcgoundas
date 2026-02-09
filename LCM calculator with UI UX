@@ -4,28 +4,116 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style></style>
+  <style> 
+   body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            background-color: #1e1e2f; /* Dark background color */
+            color: #f0f0f5; /* Light text color */
+            text-align: center;
+        } 
+    button {
+      font-size: 10px;
+      padding: 10px 20px;
+border-color: burlywood;
+border-width: 2px;
+border-style: solid;
+border-radius: 10%;
+background-color: lightyellow;
+font-display: auto;
+color:rgb(128, 59, 14);
+text-shadow: 1px 1px 2px black;
+background-color: #445f7a;
+text-align: center;
+height: 125px;
+width: 250px;
+font-weight: bold;
+font-size: xx-large;
+text-spacing-trim: space-all;
+text-wrap: balance;
+text-rendering: geometricPrecision;
+    }
+     input {
+            background-color: #445f7a;
+            color: #003d50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            border-color: rgb(0, 109, 136);
+                animation-name: myAnimation;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  text-align: center;
+    font-weight: bolder;
+    font-size: x-large;
+        }
+
+           hr {
+            border: 1px solid linear-gradient(to left, lightgoldenrodyellow, #2c3e50, #4ca1af);
+            margin: 20px 0;
+
+            height: 2px;
+
+        }
+        input::placeholder {
+            color:rgb(117, 41, 53);
+            font-size: 20px;
+            font-weight:400;
+            text-shadow: 1px 1px 2px black;
+            text-align: center;
+        }
+@keyframes myAnimation {
+  0% {color: rgb(255, 255, 255);}
+  5% {color: rgb(0, 0, 0);}
+  10% {color: rgb(255, 255, 255);}
+   15% {color: rgb(0, 0, 0);}
+     20% {color: rgb(255, 255, 255);}
+   25% {color: rgb(0, 0, 0);}
+     30% {color: rgb(255, 255, 255);}
+  35% {color: rgb(0, 0, 0);}
+  40% {color: rgb(255, 255, 255);}
+   45% {color: rgb(0, 0, 0);}
+     50% {color: rgb(255, 255, 255);}
+   55% {color: rgb(0, 0, 0);}  0% {color: rgb(255, 255, 255);}
+  60% {color: rgb(0, 0, 0);}
+  65% {color: rgb(255, 255, 255);}
+   70% {color: rgb(0, 0, 0);}
+     80% {color: rgb(255, 255, 255);}
+   85% {color: rgb(0, 0, 0);}  0% {color: rgb(255, 255, 255);}
+  90% {color: rgb(0, 0, 0);}
+  100% {color: rgb(255, 255, 255);}
+}
+span{            text-align: left;
+            color: #e74c3c; /* Vibrant red */
+            text-shadow: 2px 2px 4px #000;
+          }
+  </style>
 </head>
 <body>
-  <input type="text" id="word" placeholder="Type">
-    <input type="text" id="letters" placeholder="Type">
-    <button onclick="check(Number(document.getElementById('word').value), Number(document.getElementById('letters').value))">Run</button>
-    <p style="font-size: 46px; font-weight: bold; color: blue; text-align: center; text-shadow: black 2px 2px; font-family: Arial, sans-serif; letter-spacing: 2px; padding: 10px; border: 2px solid black; background-color: lightgray; border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 10px; margin: 20px auto; width: fit-content; max-width: 80%; line-height: 1.5; overflow-wrap: break-word; word-spacing: 4px; text-transform: uppercase; white-space: pre-wrap;">                        </p>
-    </p>
+  <input type="text" id="word" placeholder="Type Value: 1 ">
+  <hr>
+    <input type="text" id="letters" placeholder="Type Value: 2 "><br><br>
+    <button onclick="check(Number(document.getElementById('word').value), Number(document.getElementById('letters').value))"><hr>R U N<br><hr>
+
+  </button>
+    <p style="font-size: 46px; font-weight: bold; color: blue; text-align: center; text-shadow: black 2px 2px; font-family: Arial, sans-serif; letter-spacing: 2px; padding: 10px; border: 2px solid black; background-color: lightgray; border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 10px; margin: 20px auto; width: fit-content; max-width: 80%; line-height: 1.5; overflow-wrap: break-word; word-spacing: 4px; text-transform: uppercase; white-space: pre-wrap;">                            </p>
+    
 <script>
   //storage to store the values A and B
   let storage = [];
   // all styles to make it look cool
 document.querySelector('p').style.fontSize = "46px";
     document.querySelector('p').style.fontWeight = "bold";
-    document.querySelector('p').style.color = "blue";
+    document.querySelector('p').style.color = "violet";
     document.querySelector('p').style.textAlign = "center";
     document.querySelector('p').style.textShadow = "2px 2px black";
     document.querySelector('p').style.fontFamily = "Arial, sans-serif";
     document.querySelector('p').style.letterSpacing = "2px";
     document.querySelector('p').style.padding = "10px";
     document.querySelector('p').style.border = "2px solid black";
-    document.querySelector('p').style.backgroundColor = "lightgray";
+    document.querySelector('p').style.backgroundColor = "darkslateblue";
     document.querySelector('p').style.borderRadius = "10px";
     document.querySelector('p').style.boxShadow = "4px 4px 10px rgba(0, 0, 0, 0.1)";
     document.querySelector('p').style.margin = "20px auto";
@@ -73,7 +161,7 @@ else{
     //remove A  and  B values from storage
     storage.splice(0, storage.length);
     // show the LCM value
-    document.querySelector('p').innerText = `LCM is ${a}.`;
+    document.querySelector('p').innerHTML = `  LCM is <span> ${a} </span>.`;
       return; 
   }
   }
@@ -88,7 +176,7 @@ setInterval(() => {
     return;
   }
 else{
-  document.querySelector('p').innerText = show ? '<_o_u_t_p_u_t_>' : '                        ';
+  document.querySelector('p').innerText = show ? '  <_o_u_t_p_u_t_>  ' : '                            ';
   show = !show;
 }
 
