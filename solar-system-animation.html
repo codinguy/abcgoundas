@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar System Animation</title>
+  <style>
+    body {
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 9000px;
+      width: 9000px; 
+      margin: 0;
+      overflow: hidden;
+      overflow-y: scroll;
+      overflow-x: scroll;
+    }
+
+    .solar-system {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .sun {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle at center, #ffd900b9, #ff5e00e7, rgb(255, 0, 43));
+      box-shadow: 0 0 300px 50px rgba(255, 0, 0, 1);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
+
+    .planet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      transform-origin: 50% 50%;
+    }
+
+    .planet.mercury { animation: mer 5s linear infinite; width: 50px; height: 50px; background: brown;}
+    .planet.venus { animation: ven 7s linear infinite; width: 70px; height: 70px; background: #d4af37; box-shadow: 0 0 70px 15px rgb(150, 74, 3);}
+.planet.earth {animation: ear 10s linear infinite;width: 80px;height: 80px;background: radial-gradient(circle at 30% 30%, #1e90ff 70%, #0c869c 100%);  box-shadow: 0 0 80px 15px rgba(12, 134, 156, 0.8);}
+    .planet.mars { animation: mar 15s linear infinite; width: 60px; height: 60px; background: #bd0000; box-shadow: 0 0 80px 15px rgb(156, 110, 12);}
+    .planet.jupiter { animation: jup 20s linear infinite; width: 120px; height: 120px; background: #deb887; box-shadow: 0 0 120px 15px rgb(150, 74, 3);}
+    .planet.saturn { animation: sat 25s linear infinite; width: 110px; height: 110px; background: #f0e68c; box-shadow: 0 0 110px 50px rgb(150, 74, 3);}
+    .planet.uranus { animation: ura 30s linear infinite; width: 90px; height: 90px; background: #87ceeb; box-shadow: 0 0 90px 15px blue;}
+    .planet.neptune { animation: nep 45s linear infinite; width: 90px; height: 90px; background: #4169e1;box-shadow: 0 0 90px 15px purple; }
+
+    .moon { animation: moon 5s linear infinite; width: 40px; height: 40px; background: grey; border-radius: 50%; box-shadow: 0 0 50px 5px rgb(3, 150, 138);}
+    .Mmoon1 { animation: moon 23s linear infinite; width: 30px; height: 30px; background: rgba(118, 124, 60, 0.623); border-radius: 50%; box-shadow: 0 0 30px 5px brown;}
+    .Mmoon2 { animation: moon 10s linear infinite; width: 25px; height: 25px; background: rgba(194, 172, 75, 0.623); border-radius: 50%; box-shadow: 0 0 25px 5px rgba(133, 64, 8, 0.308);}
+        .Mmoon1 { animation: moon 23s linear infinite; width: 30px; height: 30px; background: rgba(136, 148, 33, 0.623); border-radius: 50%; box-shadow: 0 0 30px 5px rgba(117, 31, 31, 0.61);}
+  
+    /* Animations for planets */
+    @keyframes nep { 0% { transform: rotate(0deg) translateX(3900px); } 100% { transform: rotate(360deg) translateX(3900px); } }
+    @keyframes mer { 0% { transform: rotate(0deg) translateX(500px); } 100% { transform: rotate(360deg) translateX(500px); } }
+    @keyframes ven { 0% { transform: rotate(0deg) translateX(800px); } 100% { transform: rotate(360deg) translateX(800px); } }
+    @keyframes ear { 0% { transform: rotate(0deg) translateX(1300px); } 100% { transform: rotate(360deg) translateX(1300px); } }
+    @keyframes mar { 0% { transform: rotate(0deg) translateX(1700px); } 100% { transform: rotate(360deg) translateX(1700px); } }
+    @keyframes jup { 0% { transform: rotate(0deg) translateX(2150px); } 100% { transform: rotate(360deg) translateX(2150px); } }
+    @keyframes sat { 0% { transform: rotate(0deg) translateX(2700px); } 100% { transform: rotate(360deg) translateX(2700px); } }
+    @keyframes ura { 0% { transform: rotate(0deg) translateX(3200px); } 100% { transform: rotate(360deg) translateX(3200px); } }
+    @keyframes moon { 0% { transform: rotate(0deg) translateX(110px); } 100% { transform: rotate(360deg) translateX(110px); } }
+    @keyframes Mmoon1 { 0% { transform: rotate(0deg) translateX(100px); } 100% { transform: rotate(360deg) translateX(100px); } }
+    @keyframes Mmoon2 { 0% { transform: rotate(0deg) translateX(85px); } 100% { transform: rotate(0deg) translateX(85px); } }
+
+  </style>
+</head>
+<body>
+  <div class="solar-system">
+    <div class="sun" aria-label="Sun"></div>
+    <div class="planet mercury" aria-label="Mercury"></div>
+    <div class="planet venus" aria-label="Venus"></div>
+    <div class="planet earth" aria-label="Earth">
+      <div class="moon" aria-label="moon"></div>
+    </div>
+    <div class="planet mars" aria-label="Mars">
+      <div class="Mmoon1"></div>
+      <div class="Mmoon2"></div>
+    </div>
+    <div class="planet jupiter" aria-label="Jupiter"></div>
+    <div class="planet saturn" aria-label="Saturn"></div>
+    <div class="planet uranus" aria-label="Uranus"></div>
+    <div class="planet neptune" aria-label="Neptune"></div>
+</body>
+</html>
