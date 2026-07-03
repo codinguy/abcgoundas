@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>LCM Calculator</title>
   <style> 
    body {
             font-family: Arial, sans-serif;
@@ -99,9 +99,6 @@ span{            text-align: left;
 
   </button>
   </form>
-<% if (typeof htmlc !== "undefined") { %>
-<%- htmlc %>
-<% } %>
 <% if (typeof Result !== "undefined" && Result) { %>
 <p style="font-size: 46px; font-weight: bold; color: blue; text-align: center; text-shadow: black 2px 2px; font-family: Arial, sans-serif; letter-spacing: 2px; padding: 10px; border: 2px solid black; background-color: lightgray; border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 10px; margin: 20px auto; width: fit-content; max-width: 80%; line-height: 1.5; overflow-wrap: break-word; word-spacing: 4px; text-transform: uppercase; white-space: pre-wrap;"><span><%= Result %></span></p>
 <% } %>

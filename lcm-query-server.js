@@ -1,118 +1,21 @@
-import express from 'express'
+import express from "express";
+import { calculateLcmResult } from "./lcm-math.js";
 
-const port = 3300;
+const port = Number(process.env.PORT) || 3300;
 const app = express();
-let result = 'N/A';
+
 app.get("/", (req, res) => {
-if (!req.query.vA || !req.query.vB) {
-  console.log(req.query)
-  result = "please enter 2 numbers";
-  }
-  function check(a,b){
-    a = Number(a);
-    b = Number(b);
-    if (isNaN(a) || isNaN(b)){ 
-       console.log(req.query)
-       result = "Enter values"
-        return
-      };
+  const result =
+    req.query.vA || req.query.vB
+      ? calculateLcmResult(req.query.vA, req.query.vB)
+      : "N/A";
 
-  //storage to store the values A and B
-  let storage = [];
-
-      storage.push(Number(a));
-      //storage includes values
-  storage.push(Number(b));
-//check if user input is viable for processing
-  if (Math.round(storage[0]) !== storage[0] || Math.round(storage[1]) !== storage[1]){
-    console.log('%')
-    result=`please don't enter a decimal number`
-          storage.splice(0, storage.length);
-      return a;
-    }
-    else if(isNaN( storage[0]) === true || isNaN(storage[1]) === true){
-console.log('nonum')
-result='enter a valid number'
-          storage.splice(0, storage.length);
-      return a;
-    }
-    else if(( typeof storage[0]) === undefined || typeof(storage[1]) === undefined){
-console.log('wut')
-result='please enter 2 numbers'
-          storage.splice(0, storage.length);
-      return a;
-    }
-else if (storage[0] <= 1 || storage[1] <= 1){
-  result='please enter a number greater than 1'
-  console.log('<1')
-          storage.splice(0, storage.length);
-      return a;
-}
-
-
-
-
-
-  
-if (Math.round(a) !== a || Math.round(b) !== b){
-  result=`please don't enter a decimal number`
-  console.log('%');
-  return a;
-}
-else if (isNaN(a) || isNaN(b)){
-  result='enter a valid number'
-  console.log('nonum');
-  return a;
-}
-else if (typeof a === undefined || typeof b === undefined){
-  result='please enter 2 numbers'
-  console.log('wut');
-  return a;
-}
-else if (a <= 1 || b <= 1){
-    result='please enter a number greater than 1'
-  console.log('<1');
-  return a;
-}
-
-else{
-let Countloop = 0;
-
-  //if a > b then storage value[0] (aka value A) and vice versa
-    while(Number(a) !== Number(b)){
-      if(Number(a) < Number(b)){
-        Countloop++
-    a = Number(a) + storage[0];
-
-      }
-    else if(Number(b) < Number(a)){
-      Countloop++
-        b = Number(b) + storage[1];
-    }
-     
-    }
-
-    //remove A  and  B values from storage
-    storage.splice(0, storage.length);
-    // show the LCM value
-    result = a;
-console.log(`${a,result} tingy`)
-
-  }
-}
-  // Call the check function with the query parameters
-  if (req.query.vA && req.query.vB) {
-    console.log(check(req.query.vA, req.query.vB));
-  }
-
-  
-
-res.send(`<!DOCTYPE html>
+  res.send(`<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>LCM Query Calculator</title>
   <style> 
    body {
             font-family: Arial, sans-serif;
@@ -228,9 +131,7 @@ else{
 </script>
 </body>
 </html>`);
-    console.log(req.query);
-    console.log(result)
 });
 app.listen(port, () => {
-    console.log(`from da server ${port}`)
-})
+  console.log(`Query LCM app running at http://localhost:${port}`);
+});
