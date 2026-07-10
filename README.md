@@ -12,7 +12,7 @@ The developer behind these projects is 12 years old and started coding at age 8.
 
 GitHub became part of the workflow around the start of 2025, helping turn experiments into versioned work that can be reviewed and improved. By late 2025, backend testing became a stronger focus, which is why this repo includes shared math helpers, runnable scripts, and checks instead of only standalone HTML pages.
 
-The goal of `abcgoundas` is to show the journey clearly:<li>small</li> <li>frontend demos</li>, <li>Express/EJS experiments</li>, <li>math utilities</li>,<li> testing</li>  habitsgetting cleaner over time.
+The goal of `abcgoundas` is to show the journey clearly: <li>small frontend demos</li, <li>Express/EJS experiments</li>, <li>math utilities</li>,<li> testing</li>  habitsgetting cleaner over time.
 </ul>
 ## Projects
 
