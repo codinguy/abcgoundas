@@ -2,7 +2,17 @@
 
 Public showcase of small HTML, CSS, JavaScript, Express, and EJS practice projects.
 
-Last reviewed: 2026-07-03.
+Last reviewed: 2026-07-10.
+
+## About The Developer
+
+This section is different from an app-facing About Us page. It is a short profile of the learning path behind this repository, not a sales pitch or contact page.
+
+The developer behind these projects is 12 years old and started coding at age 8. Most of the work here comes from self-study, Udemy courses, and hands-on practice with real browser and backend projects.
+
+GitHub became part of the workflow around the start of 2025, helping turn experiments into versioned work that can be reviewed and improved. By late 2025, backend testing became a stronger focus, which is why this repo includes shared math helpers, runnable scripts, and checks instead of only standalone HTML pages.
+
+The goal of `abcgoundas` is to show the journey clearly: small frontend demos, Express/EJS experiments, math utilities, and testing habits getting cleaner over time.
 
 ## Projects
 
