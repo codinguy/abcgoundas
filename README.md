@@ -15,6 +15,9 @@ GitHub became part of the workflow around the start of 2025, helping turn experi
 The goal of `abcgoundas` is to show the journey clearly: <li>small frontend demos</li> <li>Express/EJS experiments</li> <li>math utilities</li><li> testing</li>habits getting cleaner over time.
 </ul>
 <hr>
+
+
+
 ## Projects
 
 | File | What it shows |
